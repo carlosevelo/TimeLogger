@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		07118F502AC65D7900544435 /* TimeLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118F4F2AC65D7900544435 /* TimeLoggerApp.swift */; };
-		07118F522AC65D7900544435 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118F512AC65D7900544435 /* ContentView.swift */; };
+		07118F522AC65D7900544435 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118F512AC65D7900544435 /* MainView.swift */; };
 		07118F542AC65D7900544435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F532AC65D7900544435 /* Assets.xcassets */; };
 		07118F572AC65D7900544435 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F562AC65D7900544435 /* Preview Assets.xcassets */; };
+		075C87D82AC65E410046060E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D72AC65E410046060E /* Log.swift */; };
+		075C87DA2AC661E00046060E /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D92AC661E00046060E /* LogView.swift */; };
+		075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87DB2AC661EF0046060E /* ReportsView.swift */; };
+		075C87DE2AC661FE0046060E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87DD2AC661FE0046060E /* SettingsView.swift */; };
+		075C87E12AC6660B0046060E /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87E02AC6660B0046060E /* LogViewModel.swift */; };
+		075C87E32AC667AE0046060E /* LoggerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87E22AC667AE0046060E /* LoggerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07118F4C2AC65D7900544435 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07118F4F2AC65D7900544435 /* TimeLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLoggerApp.swift; sourceTree = "<group>"; };
-		07118F512AC65D7900544435 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		07118F512AC65D7900544435 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07118F532AC65D7900544435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07118F562AC65D7900544435 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		075C87D72AC65E410046060E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		075C87D92AC661E00046060E /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		075C87DB2AC661EF0046060E /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		075C87DD2AC661FE0046060E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		075C87E02AC6660B0046060E /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
+		075C87E22AC667AE0046060E /* LoggerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,10 @@
 		07118F4E2AC65D7900544435 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
+				075C87DF2AC665EB0046060E /* ViewModels */,
+				075C87D62AC65DFD0046060E /* Views */,
+				075C87D52AC65DE60046060E /* Models */,
 				07118F4F2AC65D7900544435 /* TimeLoggerApp.swift */,
-				07118F512AC65D7900544435 /* ContentView.swift */,
 				07118F532AC65D7900544435 /* Assets.xcassets */,
 				07118F552AC65D7900544435 /* Preview Content */,
 			);
@@ -65,6 +79,34 @@
 				07118F562AC65D7900544435 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		075C87D52AC65DE60046060E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				075C87D72AC65E410046060E /* Log.swift */,
+				075C87E22AC667AE0046060E /* LoggerState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		075C87D62AC65DFD0046060E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07118F512AC65D7900544435 /* MainView.swift */,
+				075C87D92AC661E00046060E /* LogView.swift */,
+				075C87DB2AC661EF0046060E /* ReportsView.swift */,
+				075C87DD2AC661FE0046060E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		075C87DF2AC665EB0046060E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				075C87E02AC6660B0046060E /* LogViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07118F522AC65D7900544435 /* ContentView.swift in Sources */,
+				07118F522AC65D7900544435 /* MainView.swift in Sources */,
+				075C87E12AC6660B0046060E /* LogViewModel.swift in Sources */,
+				075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */,
+				075C87DA2AC661E00046060E /* LogView.swift in Sources */,
+				075C87DE2AC661FE0046060E /* SettingsView.swift in Sources */,
+				075C87E32AC667AE0046060E /* LoggerState.swift in Sources */,
 				07118F502AC65D7900544435 /* TimeLoggerApp.swift in Sources */,
+				075C87D82AC65E410046060E /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
