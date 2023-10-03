@@ -11,12 +11,15 @@
 		07118F522AC65D7900544435 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118F512AC65D7900544435 /* MainView.swift */; };
 		07118F542AC65D7900544435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F532AC65D7900544435 /* Assets.xcassets */; };
 		07118F572AC65D7900544435 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F562AC65D7900544435 /* Preview Assets.xcassets */; };
-		075C87D82AC65E410046060E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D72AC65E410046060E /* Log.swift */; };
+		0720E4392ACC708800A28B54 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 0720E4382ACC708800A28B54 /* SQLite */; };
+		0720E43B2ACC718E00A28B54 /* DbFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720E43A2ACC718E00A28B54 /* DbFactory.swift */; };
+		0720E43D2ACC74E100A28B54 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */; };
+		0720E43F2ACC795500A28B54 /* TimeLoggerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720E43E2ACC795500A28B54 /* TimeLoggerState.swift */; };
+		075C87D82AC65E410046060E /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D72AC65E410046060E /* TimeEntry.swift */; };
 		075C87DA2AC661E00046060E /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D92AC661E00046060E /* LogView.swift */; };
 		075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87DB2AC661EF0046060E /* ReportsView.swift */; };
 		075C87DE2AC661FE0046060E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87DD2AC661FE0046060E /* SettingsView.swift */; };
 		075C87E12AC6660B0046060E /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87E02AC6660B0046060E /* LogViewModel.swift */; };
-		075C87E32AC667AE0046060E /* LoggerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87E22AC667AE0046060E /* LoggerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +28,14 @@
 		07118F512AC65D7900544435 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07118F532AC65D7900544435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07118F562AC65D7900544435 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		075C87D72AC65E410046060E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0720E43A2ACC718E00A28B54 /* DbFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbFactory.swift; sourceTree = "<group>"; };
+		0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0720E43E2ACC795500A28B54 /* TimeLoggerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLoggerState.swift; sourceTree = "<group>"; };
+		075C87D72AC65E410046060E /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		075C87D92AC661E00046060E /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		075C87DB2AC661EF0046060E /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
 		075C87DD2AC661FE0046060E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		075C87E02AC6660B0046060E /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
-		075C87E22AC667AE0046060E /* LoggerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0720E4392ACC708800A28B54 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +75,7 @@
 				07118F4F2AC65D7900544435 /* TimeLoggerApp.swift */,
 				07118F532AC65D7900544435 /* Assets.xcassets */,
 				07118F552AC65D7900544435 /* Preview Content */,
+				0720E43A2ACC718E00A28B54 /* DbFactory.swift */,
 			);
 			path = TimeLogger;
 			sourceTree = "<group>";
@@ -84,8 +91,8 @@
 		075C87D52AC65DE60046060E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				075C87D72AC65E410046060E /* Log.swift */,
-				075C87E22AC667AE0046060E /* LoggerState.swift */,
+				075C87D72AC65E410046060E /* TimeEntry.swift */,
+				0720E43E2ACC795500A28B54 /* TimeLoggerState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				075C87E02AC6660B0046060E /* LogViewModel.swift */,
+				0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -125,6 +133,9 @@
 			dependencies = (
 			);
 			name = TimeLogger;
+			packageProductDependencies = (
+				0720E4382ACC708800A28B54 /* SQLite */,
+			);
 			productName = TimeLogger;
 			productReference = 07118F4C2AC65D7900544435 /* TimeLogger.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 07118F432AC65D7800544435;
+			packageReferences = (
+				0720E4372ACC708800A28B54 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 07118F4D2AC65D7900544435 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,14 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0720E43B2ACC718E00A28B54 /* DbFactory.swift in Sources */,
 				07118F522AC65D7900544435 /* MainView.swift in Sources */,
 				075C87E12AC6660B0046060E /* LogViewModel.swift in Sources */,
 				075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */,
 				075C87DA2AC661E00046060E /* LogView.swift in Sources */,
+				0720E43D2ACC74E100A28B54 /* SettingsViewModel.swift in Sources */,
 				075C87DE2AC661FE0046060E /* SettingsView.swift in Sources */,
-				075C87E32AC667AE0046060E /* LoggerState.swift in Sources */,
 				07118F502AC65D7900544435 /* TimeLoggerApp.swift in Sources */,
-				075C87D82AC65E410046060E /* Log.swift in Sources */,
+				0720E43F2ACC795500A28B54 /* TimeLoggerState.swift in Sources */,
+				075C87D82AC65E410046060E /* TimeEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0720E4372ACC708800A28B54 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0720E4382ACC708800A28B54 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0720E4372ACC708800A28B54 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07118F442AC65D7800544435 /* Project object */;
 }

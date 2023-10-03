@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SQLite
 
 @main
 struct TimeLoggerApp: App {
+    @StateObject var State = TimeLoggerState()
+    
     var body: some Scene {
         WindowGroup {
             MainView()

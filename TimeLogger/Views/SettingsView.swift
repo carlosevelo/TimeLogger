@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    var settingsViewModel = SettingsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            settingsViewModel.BuildDb()
+        }, label: {
+            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+        })
     }
 }
 

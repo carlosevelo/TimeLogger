@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-var state = LoggerState(logType: LogType.In)
-
 struct MainView: View {
+    //@Environment var State: TimeLoggerState
+    
     var body: some View {
         TabView {
-            LogView(state: state)
+            LogView()
                 .tabItem {
                     Image(systemName: "house")
                 }

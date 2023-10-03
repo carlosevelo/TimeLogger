@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogView: View {
-    var state: LoggerState
+    @EnvironmentObject var loggerState: TimeLoggerState
     var logViewModel = LogViewModel()
 
     var body: some View {
@@ -17,10 +17,10 @@ struct LogView: View {
                 print("Pressed!")
                 logViewModel.LogNewTimeStamp()
             }){
-               Text(state.logType == LogType.In ? "Clock-in" : "Clock-out")
+                Text(loggerState.State == TimeState.TimeIn ? "Clock-in" : "Clock-out")
                .frame(width: 200, height: 200)
                .foregroundColor(Color.black)
-               .background(state.logType == LogType.In ? Color.blue : Color.red)
+               .background(loggerState.State == TimeState.TimeIn ? Color.blue : Color.red)
                .clipShape(Circle())
             }.buttonStyle(PlainButtonStyle())
         }.frame(width: 300, height: 500)
@@ -28,8 +28,8 @@ struct LogView: View {
     }
 }
 
-struct LogView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogView(state: LoggerState(logType: LogType.In))
-    }
-}
+//struct LogView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LogView(loggerState: TimeLoggerState())
+//    }
+//}
