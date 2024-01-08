@@ -50,6 +50,6 @@ enum ButtonState {
 
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
-        LogView()
+        LogView().modelContainer(previewContainer)
     }
 }
