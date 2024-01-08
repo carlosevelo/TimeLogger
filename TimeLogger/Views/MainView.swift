@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    //@Environment var State: TimeLoggerState
     
     var body: some View {
         TabView {

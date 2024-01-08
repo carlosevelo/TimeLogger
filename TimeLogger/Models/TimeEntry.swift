@@ -6,10 +6,20 @@
 //
 
 import Foundation
+import SwiftData
 
-public struct TimeEntry {
-    public var Id: Int
-    public var InValue: Date
-    public var OutValue: Date
+@Model
+final class TimeEntry: Identifiable {
+    var CreatedDate: Date
+    var InValue: Date
+    var OutValue: Date?
+    let id = UUID()
     
+    init(CreatedDate: Date = .now, InValue: Date = .now, OutValue: Date?) {
+        self.CreatedDate = CreatedDate
+        self.InValue = InValue
+        self.OutValue = OutValue
+    }
 }
+
+

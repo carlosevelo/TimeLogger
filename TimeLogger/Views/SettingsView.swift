@@ -11,12 +11,9 @@ struct SettingsView: View {
     var settingsViewModel = SettingsViewModel()
     
     var body: some View {
-        Button(action: {
-            settingsViewModel.BuildDb()
-        }, label: {
-            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-        })
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
+
 }
 
 struct SettingsView_Previews: PreviewProvider {

@@ -6,10 +6,27 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ReportsView: View {
+    @Query(sort: [SortDescriptor(\TimeEntry.CreatedDate, order: .reverse)]) var entries: [TimeEntry]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Table(entries) {
+            TableColumn("Date") { entry in
+                Text(entry.CreatedDate, style: .date)
+            }
+            TableColumn("In") { entry in
+                Text(entry.InValue, style: .date)
+            }
+            TableColumn("Out") { entry in
+                if let outValue = entry.OutValue {
+                    Text(outValue, style: .date)
+                }
+                else {
+                    Text("Nil")
+                }
+            }
+        }
     }
 }
 
