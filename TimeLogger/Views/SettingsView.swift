@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
-    var settingsViewModel = SettingsViewModel()
+    @Environment(\.modelContext) var context: ModelContext
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Clear Logging History") {
+                do {
+                    try context.delete(model: TimeEntry.self)
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.red)
+            .padding(.vertical)
+            Spacer()
+        }
     }
-
 }
 
 struct SettingsView_Previews: PreviewProvider {

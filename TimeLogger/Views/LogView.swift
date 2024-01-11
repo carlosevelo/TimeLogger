@@ -9,43 +9,44 @@ import SwiftUI
 import SwiftData
 
 struct LogView: View {
+    @Environment(\.modelContext) var context: ModelContext
     @Query(sort: [SortDescriptor(\TimeEntry.CreatedDate, order: .reverse)]) var entries: [TimeEntry]
-    var buttonState: ButtonState {
-        if let lastest = entries.first {
-            return lastest.OutValue == nil ? ButtonState.ClockOut : ButtonState.ClockIn
-        }
-        else {
-            return ButtonState.ClockIn
-        }
-    }
-    @Environment(\.modelContext) private var modelContext
-
+    
     var body: some View {
         VStack{
-            Button(action: {
-                print("Pressed!")
-                if (buttonState == ButtonState.ClockIn) {
-                    let newTimeStamp = TimeEntry(OutValue: nil)
-                    modelContext.insert(newTimeStamp)
+            Button(
+                action: {
+                    if (buttonState == ButtonState.ClockIn ) {
+                        context.insert(TimeEntry())
+                    }
+                    else {
+                        var lastestEntry = entries.first
+                        lastestEntry?.OutValue = .now
+                    }
+                },
+                label: {
+                    Text(buttonState.rawValue)
                 }
-                else {
-                    entries.first?.OutValue = .now
-                }
-            }){
-                Text(buttonState == ButtonState.ClockIn ? "Clock-in" : "Clock-out")
-               .frame(width: 200, height: 200)
-               .foregroundColor(Color.black)
-               .background(buttonState == ButtonState.ClockIn ? Color.blue : Color.red)
-               .clipShape(Circle())
-            }.buttonStyle(PlainButtonStyle())
-        }.frame(width: 300, height: 500)
-        
+            )
+            .buttonStyle(PrimaryButtonStyle(backgroundColor: buttonState == ButtonState.ClockIn ? Color.blue : Color.red))
+        }
+        .frame(width: 300, height: 500)
     }
 }
 
-enum ButtonState {
-    case ClockIn
-    case ClockOut
+extension LogView {
+    var buttonState: ButtonState {
+        entries.first != nil
+            ? entries.first?.OutValue != nil
+                ? ButtonState.ClockIn
+                : ButtonState.ClockOut
+            : ButtonState.ClockIn
+    }
+}
+
+enum ButtonState : String {
+    case ClockIn = "Clock-in"
+    case ClockOut = "Clock-out"
 }
 
 struct LogView_Previews: PreviewProvider {

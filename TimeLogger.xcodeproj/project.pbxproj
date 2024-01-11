@@ -11,8 +11,8 @@
 		07118F522AC65D7900544435 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118F512AC65D7900544435 /* MainView.swift */; };
 		07118F542AC65D7900544435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F532AC65D7900544435 /* Assets.xcassets */; };
 		07118F572AC65D7900544435 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07118F562AC65D7900544435 /* Preview Assets.xcassets */; };
-		0720E43D2ACC74E100A28B54 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */; };
 		072E59882B4CA04900E1813A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E59872B4CA04900E1813A /* TestData.swift */; };
+		072E598D2B4DC29300E1813A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E598C2B4DC29300E1813A /* PrimaryButtonStyle.swift */; };
 		075C87D82AC65E410046060E /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D72AC65E410046060E /* TimeEntry.swift */; };
 		075C87DA2AC661E00046060E /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87D92AC661E00046060E /* LogView.swift */; };
 		075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C87DB2AC661EF0046060E /* ReportsView.swift */; };
@@ -25,8 +25,8 @@
 		07118F512AC65D7900544435 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07118F532AC65D7900544435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07118F562AC65D7900544435 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		072E59872B4CA04900E1813A /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		072E598C2B4DC29300E1813A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		075C87D72AC65E410046060E /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		075C87D92AC661E00046060E /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		075C87DB2AC661EF0046060E /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		07118F4E2AC65D7900544435 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
-				075C87DF2AC665EB0046060E /* ViewModels */,
+				072E598B2B4DC26C00E1813A /* Styles */,
 				075C87D62AC65DFD0046060E /* Views */,
 				075C87D52AC65DE60046060E /* Models */,
 				072E59862B4CA02D00E1813A /* TestData */,
@@ -90,6 +90,14 @@
 			path = TestData;
 			sourceTree = "<group>";
 		};
+		072E598B2B4DC26C00E1813A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				072E598C2B4DC29300E1813A /* PrimaryButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		075C87D52AC65DE60046060E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +115,6 @@
 				075C87DD2AC661FE0046060E /* SettingsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		075C87DF2AC665EB0046060E /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				0720E43C2ACC74E100A28B54 /* SettingsViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +195,7 @@
 				075C87DC2AC661EF0046060E /* ReportsView.swift in Sources */,
 				075C87DA2AC661E00046060E /* LogView.swift in Sources */,
 				072E59882B4CA04900E1813A /* TestData.swift in Sources */,
-				0720E43D2ACC74E100A28B54 /* SettingsViewModel.swift in Sources */,
+				072E598D2B4DC29300E1813A /* PrimaryButtonStyle.swift in Sources */,
 				075C87DE2AC661FE0046060E /* SettingsView.swift in Sources */,
 				07118F502AC65D7900544435 /* TimeLoggerApp.swift in Sources */,
 				075C87D82AC65E410046060E /* TimeEntry.swift in Sources */,

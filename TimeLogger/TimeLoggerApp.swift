@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct TimeLoggerApp: App {
-    var body: some Scene {
+      var body: some Scene {
         WindowGroup {
             MainView()
         }
