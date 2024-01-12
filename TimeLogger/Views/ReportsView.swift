@@ -11,23 +11,17 @@ import SwiftData
 struct ReportsView: View {
     @Environment(\.modelContext) var context: ModelContext
     @Query(sort: [SortDescriptor(\TimeEntry.CreatedDate)]) var entries: [TimeEntry]
-
-    @State var enteredTime = Date.now
-    @State var showTimePicker = false
     
     var body: some View {
         ZStack {
             Grid {
                 GridRow {
                     Text("Date")
-                        .bold()
                     Text("In")
-                        .bold()
                     Text("Out")
-                        .bold()
                     Text("Total")
-                        .bold()
                 }
+                .bold()
                 Divider()
                 ForEach(entries) { entry in
                     GridRow {
@@ -38,38 +32,7 @@ struct ReportsView: View {
                             Text(entry.Total?.ToFormattedString() ?? "00:00:00")
                         }
                         else {
-                            Button(entry.OutValue?.ToTimeOnlyString() ?? "Set") {
-                                showTimePicker.toggle()
-                            }
-                            .buttonStyle(.plain)
-                            .foregroundStyle(.blue)
-                            .popover(isPresented: $showTimePicker, content: {
-                                VStack {
-                                    HStack {
-                                        Button("Cancel") {
-                                            showTimePicker.toggle()
-                                        }
-                                        .padding()
-                                        Spacer()
-                                        Button("Set") {
-                                            entry.OutValue = enteredTime
-                                            showTimePicker.toggle()
-                                        }
-                                        .font(.system(size: 20, weight: .semibold))
-                                        .padding()
-                                    }
-                                    Spacer()
-                                    Text("Enter Time")
-                                        .font(.system(size: 20, weight: .light, design: .rounded))
-                                    Spacer()
-                                    DatePicker("Out time", selection: $enteredTime, displayedComponents: .hourAndMinute)
-                                        .datePickerStyle(.wheel)
-                                        .labelsHidden()
-                                    Spacer()
-                                }
-                                .presentationDetents([.medium])
-                            })
-                            
+                            SetTimeView(entry: entry)
                             Text(entry.Total?.ToFormattedString() ?? "00:00:00")
                         }
                     }
@@ -85,5 +48,45 @@ struct ReportsView: View {
 struct ReportsView_Previews: PreviewProvider {
     static var previews: some View {
         ReportsView().modelContainer(previewContainer)
+    }
+}
+
+struct SetTimeView: View {
+    var entry: TimeEntry
+    @State var enteredTime = Date.now
+    @State var showTimePicker = false
+    
+    var body: some View {
+        Button(entry.OutValue?.ToTimeOnlyString() ?? "Set") {
+            showTimePicker.toggle()
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.blue)
+        .popover(isPresented: $showTimePicker, content: {
+            VStack {
+                HStack {
+                    Button("Cancel") {
+                        showTimePicker.toggle()
+                    }
+                    .padding()
+                    Spacer()
+                    Button("Set") {
+                        entry.OutValue = enteredTime
+                        showTimePicker.toggle()
+                    }
+                    .font(.system(size: 20, weight: .semibold))
+                    .padding()
+                }
+                Spacer()
+                Text("Enter Time")
+                    .font(.system(size: 20, weight: .light, design: .rounded))
+                Spacer()
+                DatePicker("Out time", selection: $enteredTime, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(.wheel)
+                    .labelsHidden()
+                Spacer()
+            }
+            .presentationDetents([.medium])
+        })
     }
 }
